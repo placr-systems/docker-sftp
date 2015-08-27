@@ -88,7 +88,7 @@ Subsystem sftp internal-sftp
 UsePAM yes
 
 Match group sftponly
-    ChrootDirectory %h
+    ChrootDirectory %h/data
     X11Forwarding no
     AllowTcpForwarding no
     ForceCommand internal-sftp
