@@ -8,7 +8,8 @@ RUN \
 # Prepare sftp only part
 RUN     addgroup --gid 30100 sftponly
 
-RUN     useradd -u 30102 -d /home/sftpuser -s /usr/lib/sftp-server -M -N -g sftponly sftpuser
+# Use an impossible password. In some environments 'usePAM=yes' does not work.
+RUN     useradd -u 30102 -p '*' -d /home/sftpuser -s /usr/lib/sftp-server -M -N -g sftponly sftpuser
 RUN     mkdir -p /home/sftpuser /home/sftpuser/.ssh
 RUN     chown -R sftpuser:sftponly /home/sftpuser/.ssh
 RUN     chmod 700 /home/sftpuser/.ssh
