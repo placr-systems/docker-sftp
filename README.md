@@ -5,7 +5,7 @@ The intent of this docker is not 'internet facing' deployments.
 
 Example:
 
-	docker run -d --name sftp -v $PWD/upload:/home/sftpuser -e PUB_KEY1="slkfowi...ldjlsf" -p 2200:22 visity/sftp
+	docker run -d --name sftp -v $PWD/upload:/home/sftpuser -e PUB_KEY1="slkfowi...ldjlsf" -p 2200:22 placr/sftp
 	
 will run the sftp server with a volume share in ~/sftpuser, using the provided public key and is reachable on port 2200 on the host machine.
 
