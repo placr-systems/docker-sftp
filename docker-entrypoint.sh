@@ -14,6 +14,11 @@ if [ "$1" = '/usr/sbin/sshd' ]; then
     mkdir -p /home/sftpuser/data/ToLoad
     mkdir -p /home/sftpuser/data/Loaded
     mkdir -p /home/sftpuser/data/Failed
+	mkdir -p /home/sftpuser/data/ingest
+    mkdir -p /home/sftpuser/data/ingest/Transmit
+    mkdir -p /home/sftpuser/data/ingest/ToLoad
+    mkdir -p /home/sftpuser/data/ingest/Loaded
+    mkdir -p /home/sftpuser/data/ingest/Failed
 	# Update the ownership of /home/sftpuser/data
 	chown -R sftpuser:sftponly /home/sftpuser/data/*
 	# Open it up for other users in case folder is shared.
@@ -22,6 +27,11 @@ if [ "$1" = '/usr/sbin/sshd' ]; then
 	chmod -R a+rw /home/sftpuser/data/ToLoad
 	chmod -R a+rw /home/sftpuser/data/Loaded
 	chmod -R a+rw /home/sftpuser/data/Failed
+	chmod -R a+rw /home/sftpuser/data/ingest
+	chmod -R a+rw /home/sftpuser/data/ingest/Transmit
+	chmod -R a+rw /home/sftpuser/data/ingest/ToLoad
+	chmod -R a+rw /home/sftpuser/data/ingest/Loaded
+	chmod -R a+rw /home/sftpuser/data/ingest/Failed
 	# Set public keys provided via env vars
 	echo $PUB_KEY1 > /home/sftpuser/.ssh/authorized_keys
 	echo $PUB_KEY2 >> /home/sftpuser/.ssh/authorized_keys
